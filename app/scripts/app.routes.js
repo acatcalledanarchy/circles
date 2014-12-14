@@ -8,19 +8,32 @@
 		.module('app')
 		.config(config);
 
-	config.$inject = ['$routeProvider'];
+	config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-	function config($routeProvider) {
+	function config($stateProvider, $urlRouterProvider) {
 
-		$routeProvider
-		.when('/', {
-			templateUrl: 'scripts/circles/circles.html',
-			controller: 'MainCtrl',
-			controllerAs: 'vm'
-		})
-	  	.otherwise({
-		  	redirectTo: '/'
-	  	});
+		$urlRouterProvider
+			.otherwise('/');
+
+		$stateProvider
+			.state('/', {
+				url: '/',
+				resolve: {
+					Circle: 'Circle',
+					circles: function(Circle) {
+						return Circle.fetch().then(function(circles) {
+							return circles;
+						});
+					}
+				},
+				views: {
+					'circles': {
+						templateUrl: 'scripts/circles/circles.html',
+						controller: 'CirclesCtrl',
+						controllerAs: 'vm'
+					}
+				}
+			});
 	}
 
 })();

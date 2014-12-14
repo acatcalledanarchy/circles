@@ -6,16 +6,14 @@
 
 	angular
 		.module('app')
-		.controller('MainCtrl', MainCtrl);
+		.controller('CirclesCtrl', CirclesCtrl);
 
-	MainCtrl.$inject = ['Circle'];
+	CirclesCtrl.$inject = ['circles'];
 
-	function MainCtrl(Circle) {
+	function CirclesCtrl(circles) {
 		
 		var vm = this;
-		vm.circles = Circle.all;
-
-		console.log(vm.circles);
+		vm.circles = circles;
 	}
 
 })();
