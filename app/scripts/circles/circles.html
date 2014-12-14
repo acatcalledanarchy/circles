@@ -1,22 +1,20 @@
-<!--<div class="container">-->
-	<div class="row seven-cols">
-		<div class="col-xs-1" data-ng-repeat="circle in vm.circles" data-ng-animate="{enter: 'circle-enter'}">
-			<div class="circle-container">
-				<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-					<div class="flipper">
-						<div class="front">
-							<img class="img-responsive spinner" data-ng-src="images/{{circle.image}}" alt="{{ 
-							circle.text }}" spinner-on-load>
-							<span class="loading img-circle {{ circle.circle }}">
-								<i class="fa fa-spinner fa-spin"></i>
-							</span>
-						</div>
-						<div class="back">
-							<div class="img-circle circle text-uppercase {{ circle.circle }}" data-ng-bind-html="circle.text"></div>
-						</div>
+<div class="row oi-cols">
+	<div class="col-xs-1" data-ng-repeat="circle in vm.circles" data-ng-animate="{enter: 'circle-enter'}">
+		<div class="circle-container">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front">
+						<img class="img-responsive spinner" data-ng-src="images/{{circle.image}}" alt="{{ 
+						circle.text }}" spinner-on-load>
+						<span class="loading img-circle {{ circle.circle }}">
+							<i class="fa fa-spinner fa-spin"></i>
+						</span>
+					</div>
+					<div class="back">
+						<div class="img-circle circle text-uppercase {{ circle.circle }}" data-ng-bind-html="circle.text"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-<!--</div>-->
+</div>
