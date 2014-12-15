@@ -1,21 +1,24 @@
+/* Circle flipping on hover */
 .flip-container {
+	display: block;
 	perspective: 1000;
 }
 
-.flip-container:hover .flipper,
-.flip-container.hover .flipper {
+.flip-container:not(.disabled):hover .flipper,
+.flip-container:not(.disabled).hover .flipper {
 	transform: rotateY(180deg);
 }
 
 .flipper {
+	display: block;
 	transition: 0.5s;
 	transform-style: preserve-3d;
-
 	position: relative;
 }
 
 .front,
 .back {
+	display: block;
 	backface-visibility: hidden;
 	position: absolute;
 	top: 0;
@@ -27,6 +30,41 @@
 	transform: rotateY(0deg);
 }
 
+.flipper.flipped {
+	transition: 0s;
+	cursor: default;
+}
+
+.flipper.flipped .front {
+	display: none;
+}
+
+.flipper.flipped .back {
+	display: block;
+	-webkit-transform: rotateY(0deg);
+	transfrom: rotateY(0deg);
+}
+
 .back {
 	transform: rotateY(180deg);
+}
+
+/* Ng repeat */
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+	-webkit-transition:all linear 0.3s;
+	transition:all linear 0.3s;
+}
+ 
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+	opacity:0;
+}
+ 
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
 }

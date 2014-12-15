@@ -12,8 +12,28 @@
 
 	function CirclesCtrl(circles) {
 		
-		var vm = this;
+		var circlesCopy = angular.copy(circles),
+			vm = this;
 		vm.circles = circles;
+		vm.circleClick = function(index) {
+			if(index !== 0) {
+				// Remove circles
+				vm.circles[index].flipEnabled = false;
+				vm.circles[index].flipped = true;
+				for(var i = vm.circles.length - 1; i > index; i--) {
+					//vm.remainingCircles.push(i, 1);
+					vm.circles.splice(i, 1);
+				}
+			} else {
+				// Add circles
+				for(var j = vm.circles.length; j < circlesCopy.length; j ++) {
+					vm.circles.push(circlesCopy[j]);
+				}
+				for(var k = index; k < vm.circles; i++) {
+					vm.circles.flipped = false;
+				}
+			}
+		};
 	}
 
 })();

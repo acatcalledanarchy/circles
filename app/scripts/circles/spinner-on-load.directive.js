@@ -26,7 +26,7 @@
             scope.$watch('ngSrc', function() {
                 var circleClass = attrs.spinnerOnLoad;
                 element.addClass('spinner-hide');
-                element.parent().append('<span class="spinner circle ' + circleClass + '"><i class="fa fa-spinner fa-spin"></i></span>');
+                element.parent().append('<span class="spinner circle ' + circleClass + '"><span></span></span>');
             });      
         }
     }

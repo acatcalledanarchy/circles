@@ -3,18 +3,15 @@
 }
 
 .circle-container {
+	display: block;
 	margin-top: 4vh;
 	margin-bottom: 4vh;
 	margin-left: auto;
 	margin-right: auto;
-	height: 12vh;
-	width: 12vh;
 }
 
-.circle-container:hover {
-	cursor: pointer;
-}
-
+.circle-container,
+.circle,
 .flip-container,
 .front,
 .back {
@@ -25,11 +22,9 @@
 .circle {
 	border-radius: 50%;
 	display: table-cell;
-	width: 12vh;
-	height: 12vh; 
 	text-align: center;
 	vertical-align: middle;
-	font-size: 1.3vh;
+	font-size: 1.2vh;
 	font-family: "ag-book-condensed",sans-serif;
 	line-height: 2vh;
 	font-weight: bold;
@@ -87,13 +82,16 @@
 }
 
 .light-grey-outline {
-	color: #575756;
 	background: white;
 	border: 1px solid #e6e7e8;
 }
 
-.light-grey-outline .fa {
+.dark-grey-text {
 	color: #575756;
+}
+
+.light-grey-text {
+	color: #e6e7e8;
 }
 
 .purple-text {
@@ -102,4 +100,29 @@
 
 .green-text {
 	color: #80e1c2;
+}
+
+.spinner.purple span,
+.spinner.pink span,
+.spinner.blue span,
+.spinner.green span,
+.spinner.gold span,
+.spinner.dark-grey span {
+	border-top-color: white;
+	border-left-color: white;
+}
+
+.spinner.purple-outline  span {
+	border-top-color: #6a3894;
+	border-left-color: #6a3894;
+}
+
+.spinner.dark-grey-text span {
+	border-top-color: #575756;
+	border-left-color: #575756;
+}
+
+.spinner.light-grey-text span {
+	border-top-color: #e6e7e8;
+	border-left-color: #e6e7e8;
 }
