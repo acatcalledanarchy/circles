@@ -29,8 +29,8 @@
 				for(var j = vm.circles.length; j < circlesCopy.length; j ++) {
 					vm.circles.push(circlesCopy[j]);
 				}
-				for(var k = index; k < vm.circles; i++) {
-					vm.circles.flipped = false;
+				for(var k = index; k < vm.circles; k++) {
+					vm.circles[k].flipped = false;
 				}
 			}
 		};
