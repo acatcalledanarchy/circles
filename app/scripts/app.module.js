@@ -12,7 +12,7 @@
 			'ngRoute',
 			'ngSanitize',
 			'ngTouch',
-
+			'mm.foundation',
 			'ui.router'
 		]);
 

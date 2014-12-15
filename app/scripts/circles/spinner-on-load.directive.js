@@ -2,36 +2,33 @@
 
 (function() {
 
-	'use strict';
+    'use strict';
 
-	angular
-		.module('app')
-		.directive('spinnerOnLoad', spinnerOnLoad);
+    angular
+        .module('app')
+        .directive('spinnerOnLoad', spinnerOnLoad);
 
-	function spinnerOnLoad() {
+    function spinnerOnLoad() {
 
-		var directive = {
-			link: link,
-			scope: {
-				ngSrc: '@'
-			},
-			restrict: 'A'
-		};
+        var directive = {
+            restrict: 'A',
+            link: link
+        };
 
-		return directive;
-
-		function link(scope, element) {
-			element.on('load', function() {
-				// Set visibility: true + remove spinner overlay
-				element.removeClass('spinner-hide');
-				element.addClass('spinner-show');
-				element.parent().find('span').remove();
-			});
-			scope.$watch('ngSrc', function() {
-				// Set visibility: false + inject temporary spinner overlay
-				element.addClass('spinner-hide');
-			});
-		}
-	}
+        return directive;
+        
+        function link(scope,element,attrs) {
+            element.on('load', function() {
+                element.removeClass('spinner-hide');
+                element.addClass('spinner-show');
+                element.parent().find('span').remove();
+            });
+            scope.$watch('ngSrc', function() {
+                var circleClass = attrs.spinnerOnLoad;
+                element.addClass('spinner-hide');
+                element.parent().append('<span class="spinner circle ' + circleClass + '"><i class="fa fa-spinner fa-spin"></i></span>');
+            });      
+        }
+    }
 
 })();

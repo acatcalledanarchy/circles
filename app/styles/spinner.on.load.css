@@ -1,16 +1,12 @@
-.loading {
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
-	width: 21vh;
-	height: 21vh;
-	font-size: 10vh;
-	color: white;
+.spinner {
+	position: absolute;
+	top: 0;
+	font-size: 12vh;
 }
 
-.spinner-hide .loading {
-	visibility: visible;
+img.spinner-show {
+    visibility: visible;
 }
-.spinner-show .loading {
-	visibility: hidden;
+img.spinner-hide {
+    visibility: hidden;
 }

@@ -1,3 +1,4 @@
+<!--
 <div class="row oi-cols">
 	<div class="col-xs-1" data-ng-repeat="circle in vm.circles" data-ng-animate="{enter: 'circle-enter'}">
 		<div class="circle-container">
@@ -17,4 +18,23 @@
 			</div>
 		</div>
 	</div>
+</div>
+-->
+<div class="container">
+	<ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-7">
+		<li data-ng-repeat="circle in vm.circles" style="padding-bottom:0px!important;" data-ng-class="circle.visibilityClass ? '{{ circle.visibilityClass }}' : ''">
+			<div class="circle-container">
+				<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+					<div class="flipper">
+						<div class="front">
+							<img class="img-responsive" alt="{{ circle.text }}"data-ng-src="images/{{circle.image}}" data-spinner-on-load="{{ circle.circleClass }}">
+						</div>
+						<div class="back">
+							<div class="img-circle circle {{ circle.circleClass }}" data-ng-class="circle.capitalize ? 'capitalize' : ''" data-ng-bind-html="circle.text"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
 </div>

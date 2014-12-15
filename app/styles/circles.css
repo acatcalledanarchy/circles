@@ -1,24 +1,43 @@
+[class*="block-grid-"] > li {
+     clear: none !important;
+}
+
 .circle-container {
-	margin-top: 1vh;
-	margin-bottom: 1vh;
-	height: 21vh;
+	margin-top: 4vh;
+	margin-bottom: 4vh;
+	margin-left: auto;
+	margin-right: auto;
+	height: 12vh;
+	width: 12vh;
 }
 
 .circle-container:hover {
 	cursor: pointer;
 }
 
+.flip-container,
+.front,
+.back {
+	width: 12vh;
+	height: 12vh;
+}
+
 .circle {
+	border-radius: 50%;
 	display: table-cell;
-	width: 21vh;
-	height: 21vh;
+	width: 12vh;
+	height: 12vh; 
 	text-align: center;
 	vertical-align: middle;
-	font-size: 2vh;
+	font-size: 1.3vh;
 	font-family: "ag-book-condensed",sans-serif;
 	line-height: 2vh;
 	font-weight: bold;
 	font-style: italic;
+}
+
+.circle.capitalize {
+	text-transform: uppercase;
 }
 
 .purple {
