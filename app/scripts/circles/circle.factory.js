@@ -34,195 +34,265 @@
 
 		var circles = [
 			{
+				'id': 0,
 				'name': 'oi-home-page',
 				'text': 'Home page',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'purple',
 				'image': 'logo.png'
 			},
 			{
+				'id': 1,
 				'name': 'about-us-and-our-services',
 				'text': 'About us<br>&amp; our services',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'purple',
-				'image': 'about-us-and-our-services.png'
+				'image': 'about-us-and-our-services.png',
+				'pageContent': {
+					title: 'About us and our services'
+				}
 			},
 			{
+				'id': 2,
 				'name': 'brand-new-thinking',
 				'text': 'Brand new<br>thinking',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'purple',
-				'image': 'brand-new-thinking.png'
+				'image': 'brand-new-thinking.png',
+				'pageContent': {
+					title: 'Brand new thinking'
+				}
 			},
 			{
+				'id': 3,
 				'name': 'call-us',
 				'text': 'Call us',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'green',
 				'image': 'call-us.png'
 			},
 			{
+				'id': 4,
 				'name': 'email-us',
 				'text': 'Email us',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'green',
 				'image': 'email-us.png'
 			},
 			{
+				'id': 5,
 				'name': 'find-us',
 				'text': 'Find us',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'green',
 				'image': 'find-us.png'
 			},
 			{
+				'id': 6,
 				'name': 'menu',
 				'text': 'menu',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'dark-grey',
 				'image': 'menu.png'
 			},
 			{
+				'id': 7,
 				'name': 'three-steps-to-success',
 				'text': '3 steps<br>to success',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'purple',
-				'image': 'three-steps-to-success.png'
+				'image': 'three-steps-to-success.png',
+				'pageContent': {
+					title: 'Three steps to success'
+				}
 			},
 			{
+				'id': 8,
 				'name': 'listen-and-learn',
 				'text': 'Listen<br>&amp; learn',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'purple',
-				'image': 'listen-and-learn.png'
+				'image': 'listen-and-learn.png',
+				'pageContent': {
+					title: 'Listen and learn'
+				}
 			},
 			{
+				'id': 9,
 				'name': 'collaborate-and-create',
 				'text': 'Collaborate<br>&amp; create',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'purple',
-				'image': 'collaborate-and-create.png'
+				'image': 'collaborate-and-create.png',
+				'pageContent': {
+					title: 'Collaborate and create'
+				}
 			},
 			{
+				'id': 10,
 				'name': 'evaluate-and-evolve',
 				'text': 'Evaluate<br>&amp; evolve',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,					
 				'circleClass': 'purple',
-				'image': 'evaluate-and-evolve.png'
+				'image': 'evaluate-and-evolve.png',
+				'pageContent': {
+					title: 'Evaluate and evolve'
+				}
 			},
 			{
+				'id': 11,
 				'name': 'ipa-accredited-agency',
 				'text': 'IPA accredited<br>agency',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'dark-grey',
-				'image': 'ipa-accredited-agency.png'
+				'image': 'ipa-accredited-agency.png',
+				'pageContent': {
+					title: 'IPA accredited agency'
+				}
 			},
 			{
+				'id': 12,
 				'name': 'our-team',
 				'text': 'Our team',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'pink',
-				'image': 'our-team.png'
+				'image': 'our-team.png',
+				'pageContent': {
+					title: 'Our team'
+				}
 			},
 			{
+				'id': 13,
 				'name': 'clients',
 				'text': 'Clients',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'gold',
-				'image': 'clients.png'
+				'image': 'clients.png',
+				'pageContent': {
+					title: 'Clients'
+				}
 			},
 			{
+				'id': 14,
 				'name': 'case-study-touchstone',
 				'text': '<span class=\'green-text\'>Case study</span><br>Touchstone',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'purple-outline',
-				'image': 'case-study-touchstone.png'
+				'image': 'case-study-touchstone.png',
+				'pageContent': {
+					title: 'Case study Touchstone'
+				}
 			},
 			{
+				'id': 15,
 				'name': 'case-study-moore-stephens',
 				'text': '<span class=\'green-text\'>Case study</span><br>Moore Stephens',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'purple-outline',
-				'image': 'case-study-moore-stephens.png'
+				'image': 'case-study-moore-stephens.png',
+				'pageContent': {
+					title: 'Case study Moore Stephens'
+				}
 			},
 			{
+				'id': 16,
 				'name': 'case-study-airtel-vodafone',
 				'text': '<span class=\'green-text\'>Case study</span><br>Airtel-<br>Vodafone',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,			
 				'circleClass': 'purple-outline',
-				'image': 'case-study-airtel-vodafone.png'
+				'image': 'case-study-airtel-vodafone.png',
+				'pageContent': {
+					title: 'Case study Airtel-Vodafone'
+				}
 			},
 			{
+				'id': 17,
 				'name': 'nice-words',
 				'text': 'Nice words',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'blue',
-				'image': 'nice-words.png'
+				'image': 'nice-words.png',
+				'pageContent': {
+					title: 'Nice words'
+				}
 			},
 			{
+				'id': 18,
 				'name': 'news',
 				'text': 'News',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'light-grey-outline dark-grey-text',
-				'image': 'news.png'
+				'image': 'news.png',
+				'pageContent': {
+					title: 'News'
+				}
 			},
 			{
+				'id': 19,
 				'name': 'launching-a-game-changing-app',
 				'text': 'Launching a<br>game changing<br>app',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'light-grey-outline dark-grey-text',
-				'image': 'launching-a-game-changing-app.png'
+				'image': 'launching-a-game-changing-app.png',
+				'pageContent': {
+					title: 'Launching a game changing app'
+				}
 			},
 			{
+				'id': 20,
 				'name': 'microsoft-out-apple-apple',
 				'text': 'MicroSoft \'out-<br>Apple\' Apple',
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'light-grey-outline dark-grey-text',
-				'image': 'microsoft-out-apple-apple.png'
+				'image': 'microsoft-out-apple-apple.png',
+				'pageContent': {
+					title: 'MicroSoft \'out apple\' apple'
+				}
 			},
 			{
+				'id': 21,
 				'name': 'sign-up-to-voice-emailer',
 				'text': 'SIGN UP TO<br><span class=\'purple-text\'>vOice</span> EMAILER',
 				'capitalize': false,
@@ -232,118 +302,131 @@
 				'image': 'sign-up-to-voice-emailer.png'
 			},
 			{
+				'id': 22,
 				'name': 'linked-in',
 				'text': 'LinkedIn',
 				'circleClass': 'light-grey-outline dark-grey-text',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,				
 				'image': 'linked-in.png'
 			},
 			{
+				'id': 23,
 				'name': 'twitter',
 				'text': 'Twitter',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'light-grey-outline dark-grey-text',
 				'image': 'twitter.png'
 			},
 			{
+				'id': 24,
 				'name': 'facebook',
 				'text': 'Facebook',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'light-grey-outline dark-grey-text',
 				'image': 'facebook.png'
 			},
 			{
+				'id': 25,
 				'name': 'google-plus',
 				'text': 'Google+',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'light-grey-outline dark-grey-text',
 				'image': 'google-plus.png'
 			},
 			{
+				'id': 26,
 				'name': 'pinterest',
 				'text': 'Pinterest',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'light-grey-outline dark-grey-text',
 				'image': 'pinterest.png'
 			},
 			{
+				'id': 27,
 				'name': 'you-tube',
 				'text': 'YouTube',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'light-grey-outline dark-grey-text',
 				'image': 'you-tube.png'
 			},
 			{
+				'id': 28,
 				'name': 'ipa',
 				'text': 'IPA',
 				'capitalize': true,
-				'flipEnabled': false,				
+				'flipEnabled': true,				
 				'flipped': false,
 				'circleClass': 'light-grey-outline light-grey-text',
 				'image': 'ipa.png'
 			},
 			{
+				'id': 29,
 				'name': 'cim',
 				'text': 'CIM',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'light-grey-outline light-grey-text',
 				'image': 'cim.png'
 			},
 			{
+				'id': 30,
 				'name': 'google',
 				'text': 'Google',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'light-grey-outline light-grey-text',
 				'image': 'google.png'
 			},
 			{
+				'id': 31,
 				'name': 'apple',
 				'text': 'Apple',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'light-grey-outline light-grey-text',
 				'image': 'apple.png'
 			},
 			{
+				'id': 32,
 				'name': 'android',
 				'text': 'Android',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'light-grey-outline light-grey-text',
 				'image': 'android.png'
 			},
 			{
+				'id': 33,
 				'name': 'laravel',
 				'text': 'Laravel',
 				'circleClass': 'light-grey-outline light-grey-text',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,				
 				'image': 'laravel.png'
 			},
 			{
+				'id': 34,
 				'name': 'html5',
 				'text': 'HTML5',
 				'capitalize': true,
-				'flipEnabled': false,
+				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'light-grey-outline light-grey-text',
 				'image': 'html5.png'
