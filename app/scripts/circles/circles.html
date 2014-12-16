@@ -31,7 +31,7 @@
 </div>
 <div class="remaining-circles-container">
 	<ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-7" data-ng-if="vm.bottomCircles.length">
-		<li class="animate-repeat" data-ng-repeat="circle in vm.bottomCircles" style="padding-bottom:0px!important;">
+		<li data-ng-repeat="circle in vm.bottomCircles" style="padding-bottom:0px!important;">
 			<span class="circle-container">
 				<a class="flip-container" ontouchstart="this.classList.toggle('hover');" data-ng-class="circle.flipEnabled ? '' : 'disabled'"  data-ng-click="vm.circleClick(circle.id, 'bottom')">
 					<span class="flipper" data-ng-class="circle.flipped ? 'flipped' : ''">
