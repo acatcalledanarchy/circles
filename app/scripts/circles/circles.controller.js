@@ -26,7 +26,6 @@
 			if(circleId === 0) {
 				vm.resetCircles(circleId);
 			} else {
-				//vm.resetCircleFlip(circleId, circleType);
 				if(circleType === 'top') {
 					vm.moveCirclesBetweenTopAndBottom(circleId, circleType);
 					vm.removeCircles(circleId, circleType);				
@@ -34,9 +33,23 @@
 					vm.moveCirclesBetweenTopAndBottom(circleId, circleType);
 					vm.removeCircles(circleId, circleType);
 				}
+				vm.flipCircle(circleId);
 				vm.updatePageContent(vm.topCircles[circleId]);
 			}
 		};
+		vm.flipCircle = function(circleId) {
+			console.log('Reset circle flip');
+			for(i = 0; i < vm.topCircles.length; i++) {
+				vm.topCircles[i].flipEnabled = true;
+				vm.topCircles[i].flipped = false;
+			}
+			for(i = 0; i < vm.bottomCircles.length; i++) {
+				vm.bottomCircles[i].flipEnabled = true;
+				vm.bottomCircles[i].flipped = false;
+			}
+			vm.topCircles[circleId].flipEnabled = false;
+			vm.topCircles[circleId].flipped = true;
+		};		
 		vm.moveCirclesBetweenTopAndBottom = function(circleId, circleType) {
 			if(circleType === 'top') {
 				vm.bottomCircles = [];
@@ -69,21 +82,6 @@
 			for(i = circleId; i < vm.topCircles.length; i++) {
 				vm.topCircles[i].flipped = false;
 				vm.topCircles[i].flipEnabled = true;
-			}
-		};
-		vm.resetCircleFlip = function(circleId, circleType) {
-			if(circleType === 'top') {
-				for(i = 0; i < vm.topCircles.length; i++) {
-					vm.topCircles[i].flipped = false;
-				}
-				vm.topCircles[circleId].flipEnabled = false;
-				vm.topCircles[circleId].flipped = true;
-			} else {
-				for(i = 0; i < vm.bottomCircles.length; i++) {
-					vm.bottomCircles[i].flipped = false;
-				}
-				vm.bottomCircles[circleId].flipEnabled = false;
-				vm.bottomCircles[circleId].flipped = true;
 			}
 		};
 		vm.updatePageContent = function(circle) {
