@@ -1,8 +1,11 @@
 <div class="circles-container">
 	<ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-7">
+		<!--
 		<li class="animate-repeat" data-ng-repeat="circle in vm.circles" style="padding-bottom:0px!important;" data-ng-class="circle.visibilityClass ? '{{ circle.visibilityClass }}' : ''">
+		-->
+		<li data-ng-repeat="circle in vm.topCircles" style="padding-bottom:0px!important;" data-ng-class="circle.visibilityClass ? '{{ circle.visibilityClass }}' : ''">
 			<span class="circle-container">
-				<a class="flip-container" ontouchstart="this.classList.toggle('hover');" data-ng-class="circle.flipEnabled ? '' : 'disabled'" data-ng-click="vm.circleClick($index)">
+				<a class="flip-container" ontouchstart="this.classList.toggle('hover');" data-ng-class="circle.flipEnabled ? '' : 'disabled'" data-ng-click="vm.circleClick(circle.id, 'top')">
 					<span class="flipper" data-ng-class="circle.flipped ? 'flipped' : ''">
 						<span class="front">
 							<img class="img-responsive" alt="{{ circle.text }}"data-ng-src="images/{{circle.image}}" data-spinner-on-load="{{ circle.circleClass }}">
@@ -27,10 +30,10 @@
 	</div>
 </div>
 <div class="remaining-circles-container">
-	<ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-7" data-ng-if="vm.remainingCircles.length">
-		<li class="animate-repeat" data-ng-repeat="circle in vm.remainingCircles" style="padding-bottom:0px!important;">
+	<ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-7" data-ng-if="vm.bottomCircles.length">
+		<li class="animate-repeat" data-ng-repeat="circle in vm.bottomCircles" style="padding-bottom:0px!important;">
 			<span class="circle-container">
-				<a class="flip-container disabled" ontouchstart="this.classList.toggle('hover');" data-ng-click="vm.circleClick($index)">
+				<a class="flip-container" ontouchstart="this.classList.toggle('hover');" data-ng-class="circle.flipEnabled ? '' : 'disabled'"  data-ng-click="vm.circleClick(circle.id, 'bottom')">
 					<span class="flipper" data-ng-class="circle.flipped ? 'flipped' : ''">
 						<span class="front">
 							<img class="img-responsive" alt="{{ circle.text }}"data-ng-src="images/{{circle.image}}" data-spinner-on-load="{{ circle.circleClass }}">

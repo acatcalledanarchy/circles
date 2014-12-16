@@ -53,7 +53,7 @@
 				'circleClass': 'purple',
 				'image': 'about-us-and-our-services.png',
 				'pageContent': {
-					title: 'About us and our services'
+					'title': 'About us and our services'
 				}
 			},
 			{
@@ -66,7 +66,7 @@
 				'circleClass': 'purple',
 				'image': 'brand-new-thinking.png',
 				'pageContent': {
-					title: 'Brand new thinking'
+					'title': 'Brand new thinking'
 				}
 			},
 			{
@@ -77,7 +77,10 @@
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'green',
-				'image': 'call-us.png'
+				'image': 'call-us.png',
+				'pageContent': {
+					'title': 'Call us'
+				}
 			},
 			{
 				'id': 4,
@@ -87,7 +90,10 @@
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'green',
-				'image': 'email-us.png'
+				'image': 'email-us.png',
+				'pageContent': {
+					'title': 'Email us'
+				}
 			},
 			{
 				'id': 5,
@@ -97,7 +103,10 @@
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'green',
-				'image': 'find-us.png'
+				'image': 'find-us.png',
+				'pageContent': {
+					'title': 'Find us'
+				}
 			},
 			{
 				'id': 6,
@@ -107,7 +116,10 @@
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'dark-grey',
-				'image': 'menu.png'
+				'image': 'menu.png',
+				'pageContent': {
+					'title': 'Menu'
+				}
 			},
 			{
 				'id': 7,
@@ -119,7 +131,7 @@
 				'circleClass': 'purple',
 				'image': 'three-steps-to-success.png',
 				'pageContent': {
-					title: 'Three steps to success'
+					'title': 'Three steps to success'
 				}
 			},
 			{
@@ -132,7 +144,7 @@
 				'circleClass': 'purple',
 				'image': 'listen-and-learn.png',
 				'pageContent': {
-					title: 'Listen and learn'
+					'title': 'Listen and learn'
 				}
 			},
 			{
@@ -145,7 +157,7 @@
 				'circleClass': 'purple',
 				'image': 'collaborate-and-create.png',
 				'pageContent': {
-					title: 'Collaborate and create'
+					'title': 'Collaborate and create'
 				}
 			},
 			{
@@ -158,7 +170,7 @@
 				'circleClass': 'purple',
 				'image': 'evaluate-and-evolve.png',
 				'pageContent': {
-					title: 'Evaluate and evolve'
+					'title': 'Evaluate and evolve'
 				}
 			},
 			{
@@ -171,7 +183,7 @@
 				'circleClass': 'dark-grey',
 				'image': 'ipa-accredited-agency.png',
 				'pageContent': {
-					title: 'IPA accredited agency'
+					'title': 'IPA accredited agency'
 				}
 			},
 			{
@@ -184,7 +196,7 @@
 				'circleClass': 'pink',
 				'image': 'our-team.png',
 				'pageContent': {
-					title: 'Our team'
+					'title': 'Our team'
 				}
 			},
 			{
@@ -197,7 +209,7 @@
 				'circleClass': 'gold',
 				'image': 'clients.png',
 				'pageContent': {
-					title: 'Clients'
+					'title': 'Clients'
 				}
 			},
 			{
@@ -210,7 +222,7 @@
 				'circleClass': 'purple-outline',
 				'image': 'case-study-touchstone.png',
 				'pageContent': {
-					title: 'Case study Touchstone'
+					'title': 'Case study Touchstone'
 				}
 			},
 			{
@@ -223,7 +235,7 @@
 				'circleClass': 'purple-outline',
 				'image': 'case-study-moore-stephens.png',
 				'pageContent': {
-					title: 'Case study Moore Stephens'
+					'title': 'Case study Moore Stephens'
 				}
 			},
 			{
@@ -236,7 +248,7 @@
 				'circleClass': 'purple-outline',
 				'image': 'case-study-airtel-vodafone.png',
 				'pageContent': {
-					title: 'Case study Airtel-Vodafone'
+					'title': 'Case study Airtel-Vodafone'
 				}
 			},
 			{
@@ -249,7 +261,7 @@
 				'circleClass': 'blue',
 				'image': 'nice-words.png',
 				'pageContent': {
-					title: 'Nice words'
+					'title': 'Nice words'
 				}
 			},
 			{
@@ -262,7 +274,7 @@
 				'circleClass': 'light-grey-outline dark-grey-text',
 				'image': 'news.png',
 				'pageContent': {
-					title: 'News'
+					'title': 'News'
 				}
 			},
 			{
@@ -275,7 +287,7 @@
 				'circleClass': 'light-grey-outline dark-grey-text',
 				'image': 'launching-a-game-changing-app.png',
 				'pageContent': {
-					title: 'Launching a game changing app'
+					'title': 'Launching a game changing app'
 				}
 			},
 			{
@@ -288,7 +300,7 @@
 				'circleClass': 'light-grey-outline dark-grey-text',
 				'image': 'microsoft-out-apple-apple.png',
 				'pageContent': {
-					title: 'MicroSoft \'out apple\' apple'
+					'title': 'MicroSoft \'out apple\' apple'
 				}
 			},
 			{
@@ -299,7 +311,10 @@
 				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'pink',
-				'image': 'sign-up-to-voice-emailer.png'
+				'image': 'sign-up-to-voice-emailer.png',
+				'pageContent': {
+					'title': 'Sign up to vOice emailer'
+				}
 			},
 			{
 				'id': 22,
@@ -309,7 +324,10 @@
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,				
-				'image': 'linked-in.png'
+				'image': 'linked-in.png',
+				'pageContent': {
+					'title': 'LinkedIn'
+				}
 			},
 			{
 				'id': 23,
@@ -319,7 +337,10 @@
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'light-grey-outline dark-grey-text',
-				'image': 'twitter.png'
+				'image': 'twitter.png',
+				'pageContent': {
+					'title': 'Twitter'
+				}
 			},
 			{
 				'id': 24,
@@ -329,7 +350,10 @@
 				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'light-grey-outline dark-grey-text',
-				'image': 'facebook.png'
+				'image': 'facebook.png',
+				'pageContent': {
+					'title': 'Facebook'
+				}
 			},
 			{
 				'id': 25,
@@ -339,7 +363,10 @@
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'light-grey-outline dark-grey-text',
-				'image': 'google-plus.png'
+				'image': 'google-plus.png',
+				'pageContent': {
+					'title': 'Google+'
+				}
 			},
 			{
 				'id': 26,
@@ -349,7 +376,10 @@
 				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'light-grey-outline dark-grey-text',
-				'image': 'pinterest.png'
+				'image': 'pinterest.png',
+				'pageContent': {
+					'title': 'Pinterest'
+				}
 			},
 			{
 				'id': 27,
@@ -359,7 +389,10 @@
 				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'light-grey-outline dark-grey-text',
-				'image': 'you-tube.png'
+				'image': 'you-tube.png',
+				'pageContent': {
+					'title': 'YouTube'
+				}
 			},
 			{
 				'id': 28,
@@ -369,7 +402,10 @@
 				'flipEnabled': true,				
 				'flipped': false,
 				'circleClass': 'light-grey-outline light-grey-text',
-				'image': 'ipa.png'
+				'image': 'ipa.png',
+				'pageContent': {
+					'title': 'IPA'
+				}
 			},
 			{
 				'id': 29,
@@ -379,7 +415,10 @@
 				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'light-grey-outline light-grey-text',
-				'image': 'cim.png'
+				'image': 'cim.png',
+				'pageContent': {
+					'title': 'CIM'
+				}
 			},
 			{
 				'id': 30,
@@ -399,7 +438,10 @@
 				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'light-grey-outline light-grey-text',
-				'image': 'apple.png'
+				'image': 'apple.png',
+				'pageContent': {
+					'title': 'Apple'
+				}
 			},
 			{
 				'id': 32,
@@ -409,7 +451,10 @@
 				'flipEnabled': true,
 				'flipped': false,				
 				'circleClass': 'light-grey-outline light-grey-text',
-				'image': 'android.png'
+				'image': 'android.png',
+				'pageContent': {
+					'title': 'Android'
+				}
 			},
 			{
 				'id': 33,
@@ -419,7 +464,10 @@
 				'capitalize': true,
 				'flipEnabled': true,
 				'flipped': false,				
-				'image': 'laravel.png'
+				'image': 'laravel.png',
+				'pageContent': {
+					'title': 'Laravel'
+				}
 			},
 			{
 				'id': 34,
@@ -429,7 +477,10 @@
 				'flipEnabled': true,
 				'flipped': false,
 				'circleClass': 'light-grey-outline light-grey-text',
-				'image': 'html5.png'
+				'image': 'html5.png',
+				'pageContent': {
+					'title': 'HTML5'
+				}
 			}
 		];
 

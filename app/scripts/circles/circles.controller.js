@@ -8,61 +8,90 @@
 		.module('app')
 		.controller('CirclesCtrl', CirclesCtrl);
 
-	CirclesCtrl.$inject = ['circles', '$timeout'];
+	CirclesCtrl.$inject = ['circles'];
 
-	function CirclesCtrl(circles, $timeout) {
-		
+	function CirclesCtrl(circles) {	
+
 		var i,
-			circlesCopy = angular.copy(circles);
-
+			startSplice,
+			endSplice,
+			shadowCircles = angular.copy(circles);
 		var vm = this;
-		vm.circles = circles;
+		vm.topCircles = circles;
+		vm.bottomCircles = [];
 		vm.pageContent = {
 			title: false
 		};
-		vm.remainingCircles = [];
-		vm.circleClick = function(index) {
-			console.log('Index',index);
-			if(index !== 0) {
-				// Remove content
-				vm.pageContent.title = null;
-				// Unflip
-				for(i = 0; i < vm.circles.length; i++) {
-					vm.circles[i].flipped = false;
+		vm.circleClick = function(circleId, circleType) {
+			if(circleId === 0) {
+				vm.resetCircles(circleId);
+			} else {
+				//vm.resetCircleFlip(circleId, circleType);
+				if(circleType === 'top') {
+					vm.moveCirclesBetweenTopAndBottom(circleId, circleType);
+					vm.removeCircles(circleId, circleType);				
+				} else {
+					vm.moveCirclesBetweenTopAndBottom(circleId, circleType);
+					vm.removeCircles(circleId, circleType);
 				}
-				// Flip current circle and disable
-				vm.circles[index].flipEnabled = false;
-				vm.circles[index].flipped = true;
-				// Get remaining circles
-				vm.remainingCircles = [];
-				for(i = index + 1; i < circlesCopy.length; i++) {
-					vm.remainingCircles.push(circlesCopy[i]);
-				}
-				// Remove circles
-				for(i = vm.circles.length - 1; i > index; i--) {
-					vm.circles.splice(i, 1);
-				}
-				if(vm.pageContent) {
-					$timeout(vm.updatePageContent(vm.circles[index]), 2000);
+				vm.updatePageContent(vm.topCircles[circleId]);
+			}
+		};
+		vm.moveCirclesBetweenTopAndBottom = function(circleId, circleType) {
+			if(circleType === 'top') {
+				vm.bottomCircles = [];
+				for(i = circleId + 1; i < shadowCircles.length; i++) {
+					vm.bottomCircles.push(shadowCircles[i]);
 				}
 			} else {
-				// Add circles
-				vm.remainingCircles = [];
-				for(i = vm.circles.length; i < circlesCopy.length; i++) {
-					vm.circles.push(circlesCopy[i]);
-				}
-				for(i = index; i < vm.circles.length; i++) {
-					vm.circles[i].flipped = false;
-					vm.circles[i].flipEnabled = true;
+				for(i = vm.topCircles.length; i <= circleId; i++) {
+					vm.topCircles.push(shadowCircles[i]);
 				}
 			}
 		};
-		vm.remainingCircleClick = function(index) {
-			console.log('Remaining circle click', index);
+		vm.removeCircles = function(circleId, circleType) {
+			if(circleType === 'top') {
+				startSplice = circleId + 1;
+				endSplice = vm.topCircles.length - (circleId + 1);
+				vm.topCircles.splice(startSplice, endSplice);
+			} else {
+				startSplice = 0;
+				endSplice = (circleId - vm.bottomCircles[0].id) + 1;
+				vm.bottomCircles.splice(startSplice, endSplice);
+			}
+
+		};
+		vm.resetCircles = function(circleId) {
+			vm.bottomCircles = [];
+			for(i = vm.topCircles.length; i < shadowCircles.length; i++) {
+				vm.topCircles.push(shadowCircles[i]);
+			}
+			for(i = circleId; i < vm.topCircles.length; i++) {
+				vm.topCircles[i].flipped = false;
+				vm.topCircles[i].flipEnabled = true;
+			}
+		};
+		vm.resetCircleFlip = function(circleId, circleType) {
+			if(circleType === 'top') {
+				for(i = 0; i < vm.topCircles.length; i++) {
+					vm.topCircles[i].flipped = false;
+				}
+				vm.topCircles[circleId].flipEnabled = false;
+				vm.topCircles[circleId].flipped = true;
+			} else {
+				for(i = 0; i < vm.bottomCircles.length; i++) {
+					vm.bottomCircles[i].flipped = false;
+				}
+				vm.bottomCircles[circleId].flipEnabled = false;
+				vm.bottomCircles[circleId].flipped = true;
+			}
 		};
 		vm.updatePageContent = function(circle) {
-			vm.pageContent.title = circle.pageContent.title;
-			vm.pageContent.image = circle.image;
+			vm.pageContent.title = null;
+			if(vm.pageContent) {
+				vm.pageContent.title = circle.pageContent.title;
+				vm.pageContent.image = circle.image;
+			}
 		};
 	}
 
