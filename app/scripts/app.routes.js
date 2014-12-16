@@ -21,7 +21,9 @@
 				resolve: {
 					Circle: 'Circle',
 					circles: function(Circle) {
-						return Circle.fetch();
+						return Circle.fetch().then(function(response) {
+							return response.data;
+						});
 					}
 				},
 				views: {
