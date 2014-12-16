@@ -8,11 +8,6 @@
 		.module('app')
 		.factory('Circle', Circle);
 
-	/*
-	Circle.$inject = ['$q', '$timeout', '$http'];
-
-	function Circle($q, $timeout, $http) {
-	*/
 	function Circle() {
 
 		/*
@@ -484,92 +479,9 @@
 			}
 		];
 
-		var i,
-			startSplice,
-			endSplice,
-			topCircles = circles,
-			bottomCircles = [],
-			shadowCircles = angular.copy(circles),
-			pageContent = {
-				title: false
-			};
-
 		var Service = {
 			fetch: function() {
 				return circles;
-			},
-			circleClick: function(circleId, circleType) {
-				if(circleId === 0) {
-					Service.resetCircles(circleId);
-				} else {
-					if(circleType === 'top') {
-						Service.moveCirclesBetweenTopAndBottom(circleId, circleType);
-						Service.removeCircles(circleId, circleType);				
-					} else {
-						Service.moveCirclesBetweenTopAndBottom(circleId, circleType);
-						Service.removeCircles(circleId, circleType);
-					}
-					Service.flipCircle(circleId);
-					Service.updatePageContent(topCircles[circleId]);
-				}
-
-				return {
-					topCircles: topCircles,
-					bottomCircles: bottomCircles,
-					pageContent: pageContent
-				};
-			},
-			flipCircle: function(circleId) {
-				for(i = 0; i < topCircles.length; i++) {
-					topCircles[i].flipEnabled = true;
-					topCircles[i].flipped = false;
-				}
-				for(i = 0; i < bottomCircles.length; i++) {
-					bottomCircles[i].flipEnabled = true;
-					bottomCircles[i].flipped = false;
-				}
-				topCircles[circleId].flipEnabled = false;
-				topCircles[circleId].flipped = true;
-			},
-			moveCirclesBetweenTopAndBottom: function(circleId, circleType) {
-				if(circleType === 'top') {
-					bottomCircles = [];
-					for(i = circleId + 1; i < shadowCircles.length; i++) {
-						bottomCircles.push(shadowCircles[i]);
-					}
-				} else {
-					for(i = topCircles.length; i <= circleId; i++) {
-						topCircles.push(shadowCircles[i]);
-					}
-				}
-			},
-			removeCircles: function(circleId, circleType) {
-				if(circleType === 'top') {
-					startSplice = circleId + 1;
-					endSplice = topCircles.length - (circleId + 1);
-					topCircles.splice(startSplice, endSplice);
-				} else {
-					startSplice = 0;
-					endSplice = (circleId - bottomCircles[0].id) + 1;
-					bottomCircles.splice(startSplice, endSplice);
-				}
-			},
-			resetCircles: function(circleId) {
-				bottomCircles = [];
-				for(i = topCircles.length; i < shadowCircles.length; i++) {
-					topCircles.push(shadowCircles[i]);
-				}
-				for(i = circleId; i < topCircles.length; i++) {
-					topCircles[i].flipped = false;
-					topCircles[i].flipEnabled = true;
-				}
-			},
-			updatePageContent: function(circle) {
-				pageContent.title = null;
-				if(pageContent) {
-					pageContent.title = circle.pageContent.title;
-					pageContent.image = circle.image;
-				}
 			}
 		};
 
