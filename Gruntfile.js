@@ -44,6 +44,10 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
+      json: {
+        files: ['<%= yeoman.app %>/json/{,*}*.json'],
+        tasks: ['newer:copy:json']
+      }, 
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
@@ -308,7 +312,8 @@ module.exports = function (grunt) {
             '*.html',
             'scripts/{,*/}*.html',
             'images/{,*/}*.{webp}',
-            'fonts/{,*/}*.*'
+            'fonts/{,*/}*.*',
+            'json/{,*/}*.*'
           ]
         }, {
           expand: true,

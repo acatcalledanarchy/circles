@@ -37,7 +37,7 @@
 		function fetch() {
 			var defer = $q.defer();
 			$http
-				.get('scripts/circles/circles.json')
+				.get('json/circles.json')
 				.then(function(response) {
 					defer.resolve(response);
 					service.topCircles = response.data;
