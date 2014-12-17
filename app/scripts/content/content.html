@@ -1,3 +1,10 @@
-<div class="row">
-	<h1>{{ vm.pageTitle }}</h1>
+<div class="container content-container animate-if" data-ng-if="vm.pageContent.title">
+	<div class="row" data-equalizer>
+		<div class="large-5 columns" data-equalizer-watch>
+			<h1>{{ vm.pageContent.title }}</h1>
+		</div>
+		<div class="large-7 columns" data-equalizer-watch>
+			<img data-ng-src="images/{{ vm.pageContent.image }}" alt="{{ vm.pageContent.title }}">
+		</div>
+	</div>
 </div>

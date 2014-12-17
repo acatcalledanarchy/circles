@@ -8,22 +8,25 @@
 		.module('app')
 		.controller('CirclesCtrl', CirclesCtrl);
 
-	CirclesCtrl.$inject = ['circles', 'Circle'];
+	CirclesCtrl.$inject = ['$scope', 'circles', 'Circle'];
 
-	function CirclesCtrl(circles, Circle) {	
+	function CirclesCtrl($scope, circles, Circle) {	
 
 		var vm = this;
 		vm.bottomCircles = [];
 		vm.circleClick = circleClick;
 		vm.topCircles = circles;
 
+		/////////////////////////////////////////////////////
+
 		function circleClick(circleId, circleType) {
-			console.log('Circle Click');
-			var data = Circle.circleClick(circleId, circleType);
+			Circle.circleClick(circleId, circleType);
+		}
+
+		$scope.$on('circles:updated', function(event, data) {
 			vm.topCircles = data.topCircles;
 			vm.bottomCircles = data.bottomCircles;
-			vm.pageContent = data.pageContent;
-		}
+		});
 	}
 
 })();
