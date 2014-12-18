@@ -11,11 +11,13 @@
     function spinnerOnLoad() {
 
         var directive = {
-            restrict: 'A',
-            link: link
+            link: link,
+            restrict: 'A'
         };
 
         return directive;
+
+        ////////////////////////////////////////////
         
         function link(scope,element,attrs) {
             element.on('load', function() {
