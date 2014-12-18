@@ -7,7 +7,11 @@
 	/*background: pink;*/
 }
 
-.content-container h1 {
+.container-fluid .row {
+	max-width: 100%;
+}
+
+.container-fluid h1 {
 	position: relative;
 	bottom: 0;
 	font-size: 2.75rem;

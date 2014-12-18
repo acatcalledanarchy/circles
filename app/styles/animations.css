@@ -89,27 +89,85 @@
   opacity:1;
 }
 
-/* Ng page enter / leave */
-.page-content {
-	position: absolute;
+.content-container {
+	position: relative;
 	left: 0;
 	right: 0;
 	height: 400px;
 }
 
+.content.ng-enter {
+	z-index: 2;
+	position: absolute;
+	left: 0;
+	right: 0;	
+	height: 400px;
+	-webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+    -ms-animation-name: fadeIn;
+    -o-animation-name: fadeIn;
+    animation-name: fadeIn;
 
-.page.ng-enter {
-	animation: fadeIn 0.25s both ease-in;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    -ms-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+
+    -webkit-animation-delay: 0.25s;
+    -moz-animation-delay: 0.25s;
+    -ms-animation-delay: 0.25s;
+    -o-animation-delay: 0.25s;
+    animation-delay: 0.25s;    
+
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden; 
 }
 
-.page.ng-leave {
-	animation: fadeOut 0.25s both ease-in;
-}
+.content.ng-leave {
+	z-index: 1;
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 400px;
+	-webkit-animation-name: fadeOut;
+    -moz-animation-name: fadeOut;
+    -ms-animation-name: fadeOut;
+    -o-animation-name: fadeOut;
+    animation-name: fadeOut;
 
-.page-content.ng-enter {
-	animation: slideInRight 0.25s both ease-in;
-}
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    -ms-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    animation-duration: 0.5s;
 
-.page-content.ng-leave {
-	animation: slideOutLeft 0.25s both ease-in;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
 }

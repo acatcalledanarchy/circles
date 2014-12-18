@@ -1,5 +1,4 @@
 /* jshint latedef: false */
-/* global $ */
 
 (function() {
 
@@ -7,11 +6,12 @@
 
 	angular
 		.module('app')
-		.config(config);
+		.config(config)
+		.run(runBlock);
 
-	config.$inject = ['$stateProvider', '$urlRouterProvider', '$provide'];
+	config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-	function config($stateProvider, $urlRouterProvider, $provide) {
+	function config($stateProvider, $urlRouterProvider) {
 
 		$urlRouterProvider
 			.otherwise('/');
@@ -37,13 +37,16 @@
 				controller: 'ContentCtrl',
 				controllerAs: 'vm'
 			});
+	}
 
-		$provide.decorator('$uiViewScroll', function() {
-			return function(uiViewElement) {
-				$('html,body').animate({
-					scrollTop: uiViewElement.offset().top
-				}, 500);
-			};
+	runBlock.$inject = ['$rootScope', '$timeout', '$window'];
+
+	function runBlock($rootScope, $timeout, $window) {
+
+		$rootScope.$on('$routeChangeSuccess', function () {
+			$timeout(function () {
+				$window.scrollTo(0,0);
+			}, 500);
 		});
 	}
 
