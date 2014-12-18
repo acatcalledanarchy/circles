@@ -1,0 +1,37 @@
+<div class="circles-container">
+	<ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-7">
+		<li data-ng-repeat="circle in vm.topCircles" style="padding-bottom:0px!important;" data-ng-class="circle.visibilityClass ? '{{ circle.visibilityClass }}' : ''">
+			<span class="circle-container">
+				<a class="flip-container" data-ui-sref="layout.content({ circleName: circle.name })" data-ng-class="circle.flipEnabled ? '' : 'disabled'" data-ng-click="vm.circleClick(circle.id, 'top')">
+					<span class="flipper" data-ng-class="circle.flipped ? 'flipped' : ''">
+						<span class="front">
+							<img class="img-responsive" alt="{{ circle.text }}"data-ng-src="images/{{circle.image}}" data-spinner-on-load="{{ circle.circleClass }}">
+						</span>
+						<span class="back">
+							<span class="img-circle circle {{ circle.circleClass }}" data-ng-class="circle.capitalize ? 'capitalize' : ''" data-ng-bind-html="circle.text"></span>
+						</span>
+					</span>
+				</a>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="page-content" data-ui-view data-autoscroll="true"></div>
+<div class="remaining-circles-container">
+	<ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-7" data-ng-if="vm.bottomCircles.length">
+		<li data-ng-repeat="circle in vm.bottomCircles" style="padding-bottom:0px!important;">
+			<span class="circle-container">
+				<a class="flip-container" data-ui-sref="layout.content({ circleName: circle.name })" data-ng-class="circle.flipEnabled ? '' : 'disabled'"  data-ng-click="vm.circleClick(circle.id, 'bottom')">
+					<span class="flipper" data-ng-class="circle.flipped ? 'flipped' : ''">
+						<span class="front">
+							<img class="img-responsive" alt="{{ circle.text }}"data-ng-src="images/{{circle.image}}" data-spinner-on-load="{{ circle.circleClass }}">
+						</span>
+						<span class="back">
+							<span class="img-circle circle {{ circle.circleClass }}" data-ng-class="circle.capitalize ? 'capitalize' : ''" data-ng-bind-html="circle.text"></span>
+						</span>
+					</span>
+				</a>
+			</div>
+		</li>
+	</ul>
+</div>

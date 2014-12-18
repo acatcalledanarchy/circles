@@ -8,33 +8,12 @@
 		.module('app')
 		.controller('ContentCtrl', ContentCtrl);
 
-	ContentCtrl.$inject = ['$scope', 'Circle', '$stateParams'];
+	ContentCtrl.$inject = ['Circle', '$stateParams'];
 
-	function ContentCtrl($scope, Circle, $stateParams) {
-
-		console.log('ContentCtrl');
-
-		var circleName = $stateParams.circleName;
-
-		if(circleName) {
-			var circle = Circle.getByName(circleName);
-			console.log('Circle', circle);
-
-			/*
-			Circle.getByName(circleName).then(function(response) {
-				var circle = response.data;
-				console.log(circle);
-			});
-			*/
-		}
+	function ContentCtrl(Circle, $stateParams) {
 
 		var vm = this;
-		vm.pageTitle = null;
-
-		$scope.$on('circles:updated', function(event, data) {
-			console.log('Update!');
-			vm.pageContent = data.pageContent;
-		});
+		vm.pageContent = Circle.getPageContentByCircleName($stateParams.circleName);
 	}
 
 })();

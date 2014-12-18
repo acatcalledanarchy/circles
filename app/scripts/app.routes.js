@@ -1,4 +1,5 @@
 /* jshint latedef: false */
+/* global $ */
 
 (function() {
 
@@ -8,13 +9,16 @@
 		.module('app')
 		.config(config);
 
-	config.$inject = ['$stateProvider'];
+	config.$inject = ['$stateProvider', '$urlRouterProvider', '$provide'];
 
-	function config($stateProvider) {
+	function config($stateProvider, $urlRouterProvider, $provide) {
+
+		$urlRouterProvider
+			.otherwise('/');
 
 		$stateProvider
-			.state('app', {
-				abstract: true,
+			.state('layout', {
+				url: '/',
 				resolve: {
 					Circle: 'Circle',
 					circles: function(Circle) {
@@ -22,69 +26,25 @@
 							return response.data;
 						});
 					}
-				}
-			})
-			.state('app.home', {
-				url: '/',
-				resolve: {
-					circles: function(circles) {
-						return circles;
-					}
 				},
-				views: {
-					'top-circles@': {
-						templateUrl: 'scripts/circles/top-circles.html',
-						controller: 'CirclesCtrl',
-						controllerAs: 'vm'
-					},
-					'content@': {
-						templateUrl: 'scripts/content/content.html',
-						controller: 'ContentCtrl',
-						controllerAs: 'vm'
-					},
-					'bottom-circles@': {
-						templateUrl: 'scripts/circles/bottom-circles.html',
-						controller: 'CirclesCtrl',
-						controllerAs: 'vm'
-					}
-				}
+				templateUrl: 'scripts/layout/layout.html',
+				controller: 'LayoutCtrl',
+				controllerAs: 'vm'		
 			})
-			/*.state('app.content', {
-				url: '/:circleName',
-				resolve: {
-					circles: function(circles) {
-						return circles;
-					}
-				},	
-				views: {
-					'top-circles@': {
-						templateUrl: 'scripts/circles/top-circles.html',
-						controller: 'CirclesCtrl',
-						controllerAs: 'vm'
-					},
-					'content@': {
-						templateUrl: 'scripts/content/content.html',
-						controller: 'ContentCtrl',
-						controllerAs: 'vm'
-					},
-					'bottom-circles@': {
-						templateUrl: 'scripts/circles/bottom-circles.html',
-						controller: 'CirclesCtrl',
-						controllerAs: 'vm'
-					}
-				}
-			})
-			*/
-			.state('app.home.content', {
-				url: '/:circleName',		
-				views: {
-					'content@app.home': {
-						templateUrl: 'scripts/content/content.html',
-						controller: 'ContentCtrl',
-						controllerAs: 'vm'
-					}
-				}
+			.state('layout.content', {
+				url: ':circleName',
+				templateUrl: 'scripts/content/content.html',
+				controller: 'ContentCtrl',
+				controllerAs: 'vm'
 			});
+
+		$provide.decorator('$uiViewScroll', function() {
+			return function(uiViewElement) {
+				$('html,body').animate({
+					scrollTop: uiViewElement.offset().top
+				}, 500);
+			};
+		});
 	}
 
 })();

@@ -394,7 +394,10 @@
 		"flipEnabled": true,
 		"flipped": false,				
 		"circleClass": "light-grey-outline light-grey-text",
-		"image": "google.png"
+		"image": "google.png",
+		"pageContent": {
+			"title" : "Google+"
+		}
 	},
 	{
 		"id": 31,

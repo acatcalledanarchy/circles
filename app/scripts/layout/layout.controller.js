@@ -6,11 +6,13 @@
 
 	angular
 		.module('app')
-		.controller('CirclesCtrl', CirclesCtrl);
+		.controller('LayoutCtrl', LayoutCtrl);
 
-	CirclesCtrl.$inject = ['$scope', 'circles', 'Circle'];
+	LayoutCtrl.$inject = ['circles', 'Circle'];
 
-	function CirclesCtrl($scope, circles, Circle) {	
+	function LayoutCtrl(circles, Circle) {	
+
+		console.log('LayoutCtrl LOADED!');
 
 		var vm = this;
 		vm.bottomCircles = [];
@@ -20,13 +22,10 @@
 		/////////////////////////////////////////////////////
 
 		function circleClick(circleId, circleType) {
-			Circle.circleClick(circleId, circleType);
-		}
-
-		$scope.$on('circles:updated', function(event, data) {
+			var data = Circle.circleClick(circleId, circleType);
 			vm.topCircles = data.topCircles;
 			vm.bottomCircles = data.bottomCircles;
-		});
+		}
 	}
 
 })();

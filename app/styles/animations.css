@@ -90,7 +90,14 @@
 }
 
 /* Ng page enter / leave */
-/* Page */
+.page-content {
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 400px;
+}
+
+
 .page.ng-enter {
 	animation: fadeIn 0.25s both ease-in;
 }

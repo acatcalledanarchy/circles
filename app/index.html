@@ -23,9 +23,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <!-- Add your site or application content here -->
-    <div data-ui-view="top-circles"></div>
-    <div data-ui-view="content"></div>
-    <div data-ui-view="bottom-circles"></div>
+    <div data-ui-view></div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -61,12 +59,10 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.module.js"></script>
     <script src="scripts/app.routes.js"></script>
-    <script src="scripts/circles/circles.controller.js"></script>
+    <script src="scripts/layout/layout.controller.js"></script>
     <script src="scripts/circles/circle.factory.js"></script>
     <script src="scripts/content/content.controller.js"></script>
     <script src="scripts/layout/spinner-on-load.directive.js"></script>
-    <script src="scripts/layout/scroll-to-element.directive.js"></script>
-
     <!-- endbuild -->
 </body>
 </html>

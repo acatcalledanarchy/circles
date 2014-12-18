@@ -8,9 +8,9 @@
 		.module('app')
 		.factory('Circle', Circle);
 
-	Circle.$inject = ['$q', '$http', '$rootScope'];
+	Circle.$inject = ['$q', '$http'];
 
-	function Circle($q, $http, $rootScope) {		
+	function Circle($q, $http) {		
 
 		var i,
 			startSplice,
@@ -21,7 +21,7 @@
 			fetch: fetch,
 			circleClick: circleClick,
 			flipCircle: flipCircle,
-			getByName: getByName,
+			getPageContentByCircleName: getPageContentByCircleName,
 			moveCircles: moveCircles,
 			pageContent: {},
 			removeCircles: removeCircles,
@@ -56,13 +56,12 @@
 				service.flipCircle(circleId);
 				service.updatePageContent(service.topCircles[circleId]);
 			}
-
 			var data = {
 				topCircles: service.topCircles,
 				bottomCircles: service.bottomCircles,
 				pageContent: service.pageContent
 			};
-			$rootScope.$broadcast('circles:updated', data);
+			return data;
 		}
 
 		function flipCircle(circleId) {
@@ -78,11 +77,14 @@
 			service.topCircles[circleId].flipped = true;
 		}
 
-		function getByName(circleName) {
+		function getPageContentByCircleName(circleName) {
 			for(i = 0; i < service.shadowCircles.length; i++) {
 				if(circleName === service.shadowCircles[i].name) {
-					console.log('Found',service.shadowCircles[i].name);
-					return service.shadowCircles[i];
+					var data = {
+						title: service.shadowCircles[i].pageContent.title,
+						image: service.shadowCircles[i].image
+					};
+					return data;
 				}
 			}
 			return null;
