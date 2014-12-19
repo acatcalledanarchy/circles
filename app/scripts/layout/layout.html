@@ -1,3 +1,8 @@
+<div ng-click="widgetExpanded = !widgetExpanded">
+	Click to slide in/out
+</div>
+<div class="test"></div>
+
 <div class="circles-container">
 	<ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-7">
 		<li data-ng-repeat="circle in vm.topCircles" style="padding-bottom:0px!important;" data-ng-class="circle.visibilityClass ? '{{ circle.visibilityClass }}' : ''">
@@ -37,3 +42,10 @@
 		</li>
 	</ul>
 </div>
+BEFORE
+<div ng-slide-down="widgetExpanded" lazy-render duration="0.25">
+	<div class="content">
+		Some awesome content here
+	</div>
+</div>
+AFTER
